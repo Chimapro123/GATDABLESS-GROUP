@@ -230,29 +230,29 @@ filterButtons.forEach((button) => {
 const testimonials = [
   {
     quote:
-      "A dependable partner from planning to delivery. Their team brings professionalism, clear communication and a genuine commitment to the outcome.",
+      "Contact us by email: gatdablessvisionaryltd@gmail.com, whatsapp chat/live-councelling:  08149664429, Give us a ring:  08149664429, our Office address: 13 BAKARE STREET KETU LAGOS.",
 
-    name: "A. Client",
+    name: "VISIONARY LTD.",
 
     role: "Corporate Partner",
   },
 
   {
     quote:
-      "The experience was organized from start to finish. Every detail was handled with care and the communication stayed clear throughout.",
+      "Contact us by email: gatdablesscontractors@gmail.com, whatsapp chat/live-councelling:  09019335336, Give us a ring   09019335336, our Office address: 16 CMD ROAD, OADIS PLAZA, MAGODO IKOSI KETU LAGOS NIGERIA",
 
-    name: "M. Partner",
+    name: " CONTRACTORS LTD",
 
-    role: "Travel Client",
+    role: "Corporate Partner",
   },
 
   {
     quote:
-      "A creative team that understands both the business objective and the story behind the brand. The final work felt intentional and professional.",
+      "Contact us by email:  gatdabless@gmail.com, whatsapp chat/live-councelling:  09033285463, Give us a ring   09033285463, our Office address: 16 CMD ROAD, OADIS PLAZA, MAGODO IKOSI KETU LAGOS NIGERIA",
 
-    name: "K. Director",
+    name: " TRAVEL AND TOURS LTD ",
 
-    role: "Media & Brand Client",
+    role: "Corporate Partner",
   },
 ];
 
@@ -375,7 +375,7 @@ contactForm?.addEventListener("submit", async (event) => {
     // Show error to visitor
     if (formMessage) {
       formMessage.textContent =
-        "Sorry, your enquiry could not be sent. Please try again or contact us directly.";
+        "Sorry, your enquiry could not be sent. Please try again or contact us directly →";
     }
   } finally {
     // Enable button again
