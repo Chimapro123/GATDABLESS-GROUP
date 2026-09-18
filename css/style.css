@@ -286,6 +286,199 @@ button { border: 0; cursor: pointer; }
 .delay-1 { transition-delay: .1s; }
 .delay-2 { transition-delay: .2s; }
 .delay-3 { transition-delay: .3s; }
+/* ========================================
+   ENQUIRY FORM - RESPONSIVE FIX
+======================================== */
+
+/* Prevent grid children from forcing overflow */
+.contact-layout>* {
+  min-width: 0;
+}
+
+/* Make the form always stay inside its column */
+.contact-form {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+/* Make all form controls behave properly */
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* Make the submit button responsive */
+.form-submit {
+  width: auto;
+  max-width: 100%;
+}
+
+
+/* ========================================
+   TABLET / SMALL LAPTOP
+======================================== */
+
+@media (max-width: 980px) {
+
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 55px;
+  }
+
+  .contact-copy {
+    max-width: 700px;
+  }
+
+  .contact-form {
+    width: 100%;
+    max-width: 700px;
+    margin-inline: auto;
+  }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+  .contact-section {
+    padding: 70px 0;
+  }
+
+  .contact-layout {
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  /* Heading */
+  .contact-copy h2 {
+    font-size: clamp(42px, 13vw, 58px);
+    line-height: .95;
+    word-break: normal;
+  }
+
+  .contact-copy>p {
+    max-width: 100%;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  /* Contact information */
+  .contact-details {
+    width: 100%;
+    gap: 18px;
+  }
+
+  .contact-details a,
+  .contact-details div {
+    overflow-wrap: anywhere;
+  }
+
+  /* Form */
+  .contact-form {
+    width: 100%;
+    max-width: 100%;
+    padding: 28px 20px;
+    margin: 0;
+  }
+
+  .form-heading {
+    gap: 8px;
+    margin-bottom: 22px;
+  }
+
+  .form-heading span {
+    font-size: 8px;
+  }
+
+  .form-heading strong {
+    font-size: 22px;
+    line-height: 1.2;
+  }
+
+  /* Labels */
+  .contact-form label {
+    margin-top: 20px;
+  }
+
+  .contact-form label>span {
+    font-size: 8px;
+    margin-bottom: 7px;
+  }
+
+  /* Inputs */
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form select {
+    width: 100%;
+    max-width: 100%;
+    font-size: 15px;
+    padding: 12px 0;
+  }
+
+  .contact-form textarea {
+    min-height: 120px;
+    line-height: 1.6;
+  }
+
+  /* Select */
+  .contact-form select {
+    appearance: none;
+    -webkit-appearance: none;
+    padding-right: 28px;
+  }
+
+  /* Button */
+  .form-submit {
+    width: 100%;
+    min-height: 54px;
+    margin-top: 25px;
+    padding-inline: 18px;
+  }
+
+  .form-message {
+    font-size: 10px;
+    line-height: 1.6;
+    margin-top: 13px;
+  }
+}
+
+
+/* ========================================
+   VERY SMALL PHONES
+======================================== */
+
+@media (max-width: 380px) {
+
+  .contact-form {
+    padding: 24px 16px;
+  }
+
+  .form-heading strong {
+    font-size: 20px;
+  }
+
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form select {
+    font-size: 14px;
+  }
+
+  .form-submit {
+    font-size: 9px;
+    letter-spacing: .08em;
+  }
+
+}
 
 @media (hover: none), (max-width: 900px) { .cursor-dot, .cursor-ring { display: none; } }
 
