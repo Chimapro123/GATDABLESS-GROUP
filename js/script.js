@@ -222,169 +222,148 @@ filterButtons.forEach((button) => {
     });
   });
 });
+/* =====================================================
+   COMPANY CONTACT CARDS
+===================================================== */
 
-// ========================================
-// TESTIMONIAL SLIDER
-// ========================================
+document.addEventListener("DOMContentLoaded", () => {
+  const contactCards = document.querySelectorAll(".company-contact-card");
 
-const testimonials = [
-  {
-    quote:
-      "Contact us by email: gatdablessvisionaryltd@gmail.com, whatsapp chat/live-councelling:  08149664429, Give us a ring:  08149664429, our Office address: 13 BAKARE STREET KETU LAGOS.",
+  contactCards.forEach((card, index) => {
+    card.style.transitionDelay = `${index * 100}ms`;
+  });
+});
 
-    name: "VISIONARY LTD.",
+/* =====================================================
+   SMOOTH CONTACT LINKS
+===================================================== */
 
-    role: "Corporate Partner",
-  },
+document
+  .querySelectorAll(
+    '.company-contact-btn[href^="mailto:"], ' +
+      '.company-contact-list a[href^="mailto:"], ' +
+      '.company-contact-list a[href^="tel:"]',
+  )
+  .forEach((link) => {
+    link.addEventListener("click", () => {
+      link.style.transform = "scale(.98)";
 
-  {
-    quote:
-      "Contact us by email: gatdablesscontractors@gmail.com, whatsapp chat/live-councelling:  09019335336, Give us a ring   09019335336, our Office address: 16 CMD ROAD, OADIS PLAZA, MAGODO IKOSI KETU LAGOS NIGERIA",
+      setTimeout(() => {
+        link.style.transform = "";
+      }, 150);
+    });
+  });
+/* ========================================
+   GATDABLESS ENQUIRY FORM
+   EMAILJS
+======================================== */
 
-    name: " CONTRACTORS LTD",
+const contactForm = document.getElementById("contactForm");
+const formMessage = document.getElementById("formMessage");
+const submitButton = document.getElementById("submitButton");
 
-    role: "Corporate Partner",
-  },
+if (contactForm) {
+  contactForm.addEventListener("submit", async function (event) {
+    event.preventDefault();
 
-  {
-    quote:
-      "Contact us by email:  gatdabless@gmail.com, whatsapp chat/live-councelling:  09033285463, Give us a ring   09033285463, our Office address: 16 CMD ROAD, OADIS PLAZA, MAGODO IKOSI KETU LAGOS NIGERIA",
+    /* ----------------------------------------
+       CHECK EMAILJS
+    ---------------------------------------- */
 
-    name: " TRAVEL AND TOURS LTD ",
+    if (typeof emailjs === "undefined") {
+      console.error("EmailJS has not loaded.");
 
-    role: "Corporate Partner",
-  },
-];
+      if (formMessage) {
+        formMessage.textContent =
+          "Email service is not available. Please try again.";
+      }
 
-// Current testimonial
-let testimonialIndex = 0;
+      return;
+    }
 
-// Testimonial elements
-const quoteEl = document.getElementById("testimonialQuote");
+    /* ----------------------------------------
+       GET USER NAME
+    ---------------------------------------- */
 
-const nameEl = document.getElementById("testimonialName");
+    const name = contactForm.elements["name"]?.value.trim() || "";
 
-const roleEl = document.getElementById("testimonialRole");
+    /* ----------------------------------------
+       DISABLE BUTTON
+    ---------------------------------------- */
 
-const dots = document.querySelectorAll(".dot");
+    if (submitButton) {
+      submitButton.disabled = true;
 
-// ----------------------------------------
-// Render testimonial
-// ----------------------------------------
+      submitButton.innerHTML =
+        'Sending... <i class="fa-solid fa-spinner fa-spin"></i>';
+    }
 
-function renderTestimonial() {
-  // Safety check
-  if (!quoteEl || !nameEl || !roleEl) {
-    return;
-  }
+    /* ----------------------------------------
+       SHOW STATUS
+    ---------------------------------------- */
 
-  const item = testimonials[testimonialIndex];
+    if (formMessage) {
+      formMessage.textContent = "Sending your enquiry...";
+    }
 
-  // Update text
-  quoteEl.textContent = item.quote;
+    try {
+      /* ----------------------------------------
+         SEND FORM THROUGH EMAILJS
 
-  nameEl.textContent = item.name;
+         REPLACE THESE:
+         YOUR_SERVICE_ID
+         YOUR_TEMPLATE_ID
+      ---------------------------------------- */
 
-  roleEl.textContent = item.role;
+      const response = await emailjs.sendForm(
+        "YOUR_SERVICE_ID",
 
-  // Update dots
-  dots.forEach((dot, index) => {
-    dot.classList.toggle("active", index === testimonialIndex);
+        "YOUR_TEMPLATE_ID",
+
+        contactForm,
+      );
+
+      console.log("EmailJS response:", response);
+
+      /* ----------------------------------------
+         SUCCESS
+      ---------------------------------------- */
+
+      if (formMessage) {
+        formMessage.textContent = `Thank you${name ? ", " + name : ""}. Your enquiry has been sent successfully.`;
+      }
+
+      /* ----------------------------------------
+         RESET FORM
+      ---------------------------------------- */
+
+      contactForm.reset();
+    } catch (error) {
+      /* ----------------------------------------
+         ERROR
+      ---------------------------------------- */
+
+      console.error("GATDABLESS EMAIL ERROR:", error);
+
+      if (formMessage) {
+        formMessage.textContent =
+          "Sorry, we could not send your enquiry. Please try again or contact us directly.";
+      }
+    } finally {
+      /* ----------------------------------------
+         ENABLE BUTTON AGAIN
+      ---------------------------------------- */
+
+      if (submitButton) {
+        submitButton.disabled = false;
+
+        submitButton.innerHTML =
+          'Send Enquiry <i class="fa-solid fa-arrow-right"></i>';
+      }
+    }
   });
 }
 
-// Previous testimonial
-document.getElementById("testimonialPrev")?.addEventListener("click", () => {
-  testimonialIndex =
-    (testimonialIndex - 1 + testimonials.length) % testimonials.length;
-
-  renderTestimonial();
-});
-
-// Next testimonial
-document.getElementById("testimonialNext")?.addEventListener("click", () => {
-  testimonialIndex = (testimonialIndex + 1) % testimonials.length;
-
-  renderTestimonial();
-});
-
-// Click testimonial dots
-dots.forEach((dot, index) => {
-  dot.addEventListener("click", () => {
-    testimonialIndex = index;
-
-    renderTestimonial();
-  });
-});
-
-// Initial testimonial
-renderTestimonial();
-
-// ========================================
-// CONTACT FORM
-// ========================================
-
-// ========================================
-// GATDABLESS ENQUIRY FORM - EMAILJS
-// ========================================
-
-const contactForm = document.getElementById("contactForm");
-
-const formMessage = document.getElementById("formMessage");
-
-contactForm?.addEventListener("submit", async (event) => {
-  // Stop the page from refreshing
-  event.preventDefault();
-
-  // Find the submit button
-  const submitButton = contactForm.querySelector(
-    'button[type="submit"], input[type="submit"]',
-  );
-
-  // Get visitor's name
-  const name = contactForm.elements.name?.value.trim() || "";
-
-  // Change button while sending
-  if (submitButton) {
-    submitButton.disabled = true;
-    submitButton.textContent = "Sending...";
-  }
-
-  // Show sending message
-  if (formMessage) {
-    formMessage.textContent = "Sending your enquiry...";
-  }
-
-  try {
-    // Send the complete form through EmailJS
-    await emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", contactForm);
-
-    // Success message
-    if (formMessage) {
-      formMessage.textContent = name
-        ? `Thank you, ${name}. Your enquiry has been sent successfully to the GATDABLESS team.`
-        : "Thank you. Your enquiry has been sent successfully to the GATDABLESS team.";
-    }
-
-    // Clear the form
-    contactForm.reset();
-  } catch (error) {
-    // Show error in console
-    console.error("EmailJS Error:", error);
-
-    // Show error to visitor
-    if (formMessage) {
-      formMessage.textContent =
-        "Sorry, your enquiry could not be sent. Please try again or contact us directly →";
-    }
-  } finally {
-    // Enable button again
-    if (submitButton) {
-      submitButton.disabled = false;
-      submitButton.textContent = "Start an Enquiry";
-    }
-  }
-});
 // ========================================
 // BACK TO TOP BUTTON
 // ========================================
