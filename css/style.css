@@ -620,6 +620,14 @@ button { border: 0; cursor: pointer; }
   gap: 80px;
   align-items: start;
 }
+.company-number{
+  /* background-color: #0a2046; */
+  width: 8%;
+margin-bottom: 10px;
+  height: 3%;
+  color:#0a2046;
+
+}
 
 
 /* ========================================
