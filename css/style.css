@@ -123,6 +123,7 @@ button { border: 0; cursor: pointer; }
 /* companies */
 .companies-section { padding-bottom: 145px; }
 .section-top-row { display: flex; justify-content: space-between; align-items: end; gap: 25px; margin-bottom: 44px; }
+
 .section-note { color: rgba(255,255,255,.56); font-size: 11px; line-height: 1.55; text-align: right; }
 .company-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 15px; }
 .company-card { min-height: 620px; background: #111b2b; position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,.07); }
@@ -138,7 +139,9 @@ button { border: 0; cursor: pointer; }
 .company-body h3 { margin-top: 11px; font-family: 'Montserrat'; font-size: clamp(24px, 2.3vw, 35px); line-height: .98; letter-spacing: -.045em; }
 .company-body h3 em { font-style: normal; color: rgba(255,255,255,.55); font-size: .62em; }
 .company-body p { margin-top: 15px; color: rgba(255,255,255,.64); font-size: 11px; line-height: 1.7; max-width: 340px; }
-.circle-arrow { width: 42px; height: 42px; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.35); color: #fff; border-radius: 50%; position: absolute; right: 0; bottom: 0; transform: translateY(-2px); transition: .25s; }
+.circle-arrow { width: 42px; height: 42px; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.35); color: #fff; border-radius: 50%; position: absolute; right: 0; bottom: 0; transform: translateY(-2px); transition: .25s;
+margin-bottom:3rem;
+}
 .company-card:hover .circle-arrow { background: #fff; color: var(--navy); transform: translateY(-5px) rotate(4deg); }
 
 /* services */

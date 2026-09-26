@@ -316,9 +316,9 @@ if (contactForm) {
       ---------------------------------------- */
 
       const response = await emailjs.sendForm(
-        "YOUR_SERVICE_ID",
+        "chimapro123",
 
-        "YOUR_TEMPLATE_ID",
+        "template_01w7fdo",
 
         contactForm,
       );

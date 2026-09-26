@@ -1070,98 +1070,73 @@
       </div>
 
 
-      <!-- ENQUIRY FORM -->
-      <form class="contact-form reveal" id="contactForm">
-
-        <div class="form-heading">
-          <span>START AN ENQUIRY</span>
-          <strong>We'd love to hear from you.</strong>
-        </div>
-
-
-        <!-- NAME -->
-        <label>
-          <span>Full Name *</span>
-          <input type="text" name="name" placeholder="Your full name" autocomplete="name" required />
-        </label>
-
-
-        <!-- EMAIL -->
-        <label>
-          <span>Email Address *</span>
-          <input type="email" name="email" placeholder="you@example.com" autocomplete="email" required />
-        </label>
-
-
-        <!-- PHONE -->
-        <label>
-          <span>Phone Number</span>
-          <input type="tel" name="phone" placeholder="+234..." autocomplete="tel" />
-        </label>
-
-
-        <!-- COMPANY -->
-        <label>
-          <span>Company / Organisation</span>
-          <input type="text" name="company" placeholder="Company name" autocomplete="organization" />
-        </label>
-
-
-        <!-- SERVICE -->
-        <label>
-          <span>What do you need? *</span>
-
-          <select name="service" required>
-
-            <option value="">
-              Select a service
-            </option>
-
-            <option value="Real Estate & Construction">
-              Real Estate & Construction
-            </option>
-
-            <option value="Travel & Tours">
-              Travel & Tours
-            </option>
-
-            <option value="Media & Creative">
-              Media & Creative
-            </option>
-
-            <option value="Partnership / Corporate">
-              Partnership / Corporate
-            </option>
-
-            <option value="Other">
-              Other
-            </option>
-
-          </select>
-
-        </label>
-
-
-        <!-- MESSAGE -->
-        <label>
-          <span>Message *</span>
-
-          <textarea name="message" rows="5" placeholder="Tell us a little about your project..." required></textarea>
-
-        </label>
-
-
-        <!-- SUBMIT BUTTON -->
-        <button class="btn btn-primary form-submit" type="submit" id="submitButton">
-          Send Enquiry
-          <i class="fa-solid fa-arrow-right"></i>
-        </button>
-
-
-        <!-- SUCCESS / ERROR MESSAGE -->
-        <p class="form-message" id="formMessage" role="status" aria-live="polite"></p>
-
-      </form>
+    <!-- ENQUIRY FORM -->
+    <form class="contact-form reveal" id="contactForm" action="https://formsubmit.co/gatdabless@gmail.com" method="POST">
+    
+      <div class="form-heading">
+        <span>START AN ENQUIRY</span>
+        <strong>We'd love to hear from you.</strong>
+      </div>
+    
+      <!-- FormSubmit config -->
+      <input type="hidden" name="_subject" value="New Enquiry from Website" />
+      <input type="hidden" name="_template" value="table" />
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+    
+      <!-- NAME -->
+      <label>
+        <span>Full Name *</span>
+        <input type="text" name="name" placeholder="Your full name" autocomplete="name" required />
+      </label>
+    
+      <!-- EMAIL -->
+      <label>
+        <span>Email Address *</span>
+        <input type="email" name="email" placeholder="you@example.com" autocomplete="email" required />
+      </label>
+    
+      <!-- PHONE -->
+      <label>
+        <span>Phone Number</span>
+        <input type="tel" name="phone" placeholder="+234..." autocomplete="tel" />
+      </label>
+    
+      <!-- COMPANY -->
+      <label>
+        <span>Company / Organisation</span>
+        <input type="text" name="company" placeholder="Company name" autocomplete="organization" />
+      </label>
+    
+      <!-- SERVICE -->
+      <label>
+        <span>What do you need? *</span>
+        <select name="service" required>
+          <option value="">Select a service</option>
+          <option value="Real Estate & Construction">Real Estate & Construction</option>
+          <option value="Travel & Tours">Travel & Tours</option>
+          <option value="Media & Creative">Media & Creative</option>
+          <option value="Partnership / Corporate">Partnership / Corporate</option>
+          <option value="Other">Other</option>
+        </select>
+      </label>
+    
+      <!-- MESSAGE -->
+      <label>
+        <span>Message *</span>
+        <textarea name="message" rows="5" placeholder="Tell us a little about your project..." required></textarea>
+      </label>
+    
+      <!-- SUBMIT BUTTON -->
+      <button class="btn btn-primary form-submit" type="submit" id="submitButton">
+        Send Enquiry
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    
+      <!-- SUCCESS / ERROR MESSAGE -->
+      <p class="form-message" id="formMessage" role="status" aria-live="polite"></p>
+    
+    </form>
 
     </div>
 
@@ -1177,7 +1152,7 @@
       <div class="footer-column"><span>Business</span><a href="#companies">Contractors</a><a href="#companies">Travel & Tours</a><a href="#companies">Visionary</a><a href="#news">News</a></div>
       <div class="footer-column"><span>Connect</span><a href="#contact">Contact</a><a href="mailto:gatdablessvisionaryltd@gmail.com">Email us</a><a href="gatdablesscontractors@gmail.com">Privacy</a><a href="gatdablessvisionaryltd@gmail.com">Terms</a></div>
     </div>
-    <div class="container footer-bottom"><span>© <span id="year"></span> GATDABLESS GROUP. All rights reserved.</span> <span> built and designed by <a href="https://chimapro123.github.io/portfolio/index.html" target="_blank" rel="noopener noreferrer">Dtech</a></span>  <span>Designed for Africa. Built for growth.</span></div>
+    <div class="container footer-bottom"><span>© <span id="year"></span> GATDABLESS GROUP. All rights reserved.</span> <span> built and designed by <a href="https://chimapro123.github.io/portfolio-React/#home" target="_blank" rel="noopener noreferrer">Dtech</a></span>  <span>Designed for Africa. Built for growth.</span></div>
   </footer>
 
   <a class="whatsapp-float" href="https://wa.me/2348032817751"
@@ -1192,7 +1167,7 @@
   
   <script>
     emailjs.init({
-      publicKey: "YOUR_PUBLIC_KEY"
+      publicKey: "8HwfzCEaSbrLnz5JD"
     });
   </script>
   
