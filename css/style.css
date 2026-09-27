@@ -1456,7 +1456,7 @@ margin-bottom: 10px;
   .service-item { min-height: 150px; }
   .sector-statement { padding: 95px 0; }
   .sector-inner h2 { font-size: 60px; margin-bottom: 65px; }
-  .sector-marquee { font-size: 16px; gap: 15px; overflow: hidden; width: 100vw; margin-left: calc((100vw - var(--container)) / -2); padding-left: 15px; }
+  .sector-marquee { font-size: 16px; gap: 13px; overflow: scroll; width: 100vw; margin-left: calc((96vw - var(--container)) / -2); padding-left: 15px; }
   .project-feature { min-height: 470px; }
   .project-stack { min-height: 460px; }
   .project-content h3 { font-size: 43px; }
