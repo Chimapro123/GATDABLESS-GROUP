@@ -309,23 +309,22 @@ margin-bottom:3rem;
 
 /* NUMBER */
 
-.company-number {
+/* .company-number {
   width: 57px;
   height: 48px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 30px;
+  /* align-items: center;
+  justify-content: center; */
+  margin-bottom: 50px;
 
 
-  /* background: #0a2046; */
-  color: #f60505;
+
 
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 1px;
   
-}
+} */
 
 
 /* HEADER */
@@ -543,6 +542,7 @@ margin-bottom:3rem;
   }
 
   .company-contact-grid {
+   
     grid-template-columns: 1fr;
     gap: 18px;
   }
@@ -550,6 +550,7 @@ margin-bottom:3rem;
   .company-contact-card:last-child {
     grid-column: auto;
     max-width: none;
+ 
   }
 
   .company-contact-card {
@@ -564,6 +565,11 @@ margin-bottom:3rem;
     min-height: auto;
     margin: 22px 0;
   }
+  .contact-number{
+    margin-top: 1rem;
+    
+  }
+
 
 }
 
