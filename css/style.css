@@ -444,7 +444,18 @@ margin-bottom:3rem;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
-
+.contact-copy img{
+  
+  width: 100%;
+  height: auto;
+  margin-top: 4.1rem;
+  border-radius: 20px;
+}
+.contact-copy-img:hover{
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
+  
+}
 .company-contact-list a>span:last-child,
 .company-contact-item>span:last-child {
   color: #333;
