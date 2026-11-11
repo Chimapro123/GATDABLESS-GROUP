@@ -305,28 +305,81 @@ margin-bottom:3rem;
 .company-contact-card:hover::before {
   transform: scaleX(1);
 }
+.social-card {
+  width: 100%;
+  max-width: 380px;
+  padding: 22px 18px;
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 16px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
 
-
-/* NUMBER */
-
-/* .company-number {
-  width: 57px;
-  height: 48px;
-  display: flex;
-  /* align-items: center;
-  justify-content: center; */
-  margin-bottom: 50px;
-
-
-
-
-  font-size: 12px;
+.social-card h3 {
+  margin: 0 0 6px;
+  color: #202020;
+  font-size: 18px;
   font-weight: 700;
-  letter-spacing: 1px;
-  
-} */
+}
 
+.social-card p {
+  margin: 0 0 18px;
+  color: #777;
+  font-size: 11px;
+  letter-spacing: 1.2px;
+  font-weight: 600;
+}
 
+.social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+}
+
+.social-icon {
+  width: 43px;
+  height: 43px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 18px;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+}
+
+.facebook {
+  background: #1877F2;
+}
+
+.instagram {
+  background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+}
+
+.twitter {
+  background: #000;
+}
+
+.linkedin {
+  background: #0A66C2;
+}
+
+.social-footer {
+  display: block;
+  margin-top: 17px;
+  color: #999;
+  font-size: 11px;
+}
 /* HEADER */
 
 .company-contact-header span {
